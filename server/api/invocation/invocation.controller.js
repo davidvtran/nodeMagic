@@ -20,6 +20,15 @@ exports.show = function(req, res) {
   });
 };
 
+exports.get3digitcode = function(req,res) {
+  console.log(req.params.threedigitcode)
+  Invocation
+    .find({'shortURL': 'https://org62.my.salesforce.com/' + req.params.threedigitcode})
+    .exec(function(err,data) {
+      return res.json(data);
+    });
+}
+
 exports.invocation = function(req,res) {
   console.log(req.body.shortURL)
   Invocation
