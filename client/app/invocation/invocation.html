@@ -4,16 +4,16 @@ This is the myroute view.
 <div id ="stuff">
 	<table id = 'table1' style="..." border="1">
 		<tr>
-			<th>shortURL</th>
-			<th ng-repeat = "res in keys">
+<!-- 			<th>shortURL</th>
+ -->			<th ng-repeat = "res in keys">
 				<span>{{res}}
 				</span>
 			</th>
 		</tr>
-		<tr ng-repeat="result in results">
-			<td><a href="invocation/{{shortcode(result.shortURL)}}">{{result.shortURL}}</a></td>
+		<tr ng-repeat="shortU in shortlist">
+			<!-- <td><a href="url">{{shortU.shortURL}}</a></td> -->
 			<td ng-repeat="key in keys">
-			<span>{{result[key]}}</span>
+			<span>{{shortU[key]}}</span>
 			</td>
 		</tr>
 	</table>

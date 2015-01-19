@@ -8,7 +8,7 @@ angular.module('nodeTestProgramApp')
     var meaningOfLife = 42;
     var service = {};
     service.allResults = [];
-    service.currResult = {};
+    service.shortlist = [];
 
     service.getResults = function(cb) {
     	return $http.get('/api/results/')
@@ -18,6 +18,15 @@ angular.module('nodeTestProgramApp')
             cb();
 
     	})
+    };
+
+    service.getShortlist = function(code, cb) {
+        return $http.get('/api/invocations/' + code)
+        .success (function (temp) {
+            console.log(temp);
+            service.shortlist = temp;
+            cb();
+        })
     };
 
 
