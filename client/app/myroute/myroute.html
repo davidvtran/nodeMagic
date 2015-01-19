@@ -12,6 +12,7 @@ This is the myroute view.
 		</tr>
 		<tr ng-repeat="result in results">
 			<td><a href="invocation/{{shortcode(result.shortURL)}}">{{result.shortURL}}</a></td>
+
 			<td ng-repeat="key in keys">
 			<span>{{result[key]}}</span>
 			</td>

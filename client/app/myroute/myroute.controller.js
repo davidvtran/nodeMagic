@@ -20,8 +20,12 @@ angular.module('nodeTestProgramApp')
           	}
       	}
   	}
-    $scope.shortcode = function (string) {
-      return $scope.temp = string.slice(-3,0);
+    $scope.shortcode = function(string) {
+      console.log(string);
+      // console.log(string.slice(32,35));
+      $scope.temp = string.slice(32,35);
+      console.log($scope.temp);
+      return $scope.temp;
     };
 
   
