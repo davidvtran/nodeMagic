@@ -20,6 +20,15 @@ exports.show = function(req, res) {
   });
 };
 
+exports.get3digitcode = function(req,res) {
+  console.log(req.params.threedigitcode)
+  Result
+    .find({'shortURL': 'https://org62.my.salesforce.com/' + req.params.threedigitcode})
+    .exec(function(err,data) {
+      return res.json(data);
+    });
+}
+
 
 // Creates a new result in the DB.
 exports.create = function(req, res) {

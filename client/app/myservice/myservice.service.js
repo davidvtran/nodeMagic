@@ -21,6 +21,14 @@ angular.module('nodeTestProgramApp')
     	})
     };
 
+    // service.getSomeResults = function(code, cb) {
+    //     return $http.get('/api/results/' + code)
+    //     .success function(temp) {
+    //         service.someResults = temp;
+    //         cb();
+    //     }
+    // }
+
     service.getShortlist = function(code, cb) {
         return $http.get('/api/invocations/' + code)
         .success (function (temp) {
