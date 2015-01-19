@@ -1,0 +1,22 @@
+<!-- <div class="col-md-12">
+This is the myroute view.
+</div> -->
+<div id ="stuff">
+	<table id = 'table1' style="..." border="1">
+		<tr>
+			<th>shortURL</th>
+			<th ng-repeat = "res in keys">
+				<span>{{res}}
+				</span>
+			</th>
+		</tr>
+		<tr ng-repeat="result in results">
+			<td><a href="url">{{result.shortURL}}</a></td>
+			<td ng-repeat="key in keys">
+			<span>{{result[key]}}</span>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
