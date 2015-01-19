@@ -30,9 +30,13 @@ exports.get3digitcode = function(req,res) {
 }
 
 exports.invocation = function(req,res) {
-  console.log(req.body.shortURL)
+  console.log(req.body.shortURL);
+  var options = {
+    "limit": 5,
+  };
+  console.log(options);
   Invocation
-    .find({'shortURL': req.body.shortURL})
+    .find({'shortURL': req.body.shortURL}, options)
     .exec(function(err,data) {
       return res.json(data);
     });

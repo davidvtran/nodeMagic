@@ -10,10 +10,11 @@ angular.module('nodeTestProgramApp')
     service.allResults = [];
     service.shortlist = [];
 
+
     service.getResults = function(cb) {
     	return $http.get('/api/results/')
     	.success (function (temp) {
-    		console.log(temp);
+    		//console.log(temp);
     		service.allResults = temp;
             cb();
 
@@ -23,7 +24,7 @@ angular.module('nodeTestProgramApp')
     service.getShortlist = function(code, cb) {
         return $http.get('/api/invocations/' + code)
         .success (function (temp) {
-            console.log(temp);
+            //console.log(temp);
             service.shortlist = temp;
             cb();
         })
