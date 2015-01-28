@@ -8,7 +8,9 @@ angular.module('nodeTestProgramApp')
     var meaningOfLife = 42;
     var service = {};
     service.allResults = [];
+    service.someResults = [];
     service.shortlist = [];
+
 
 
     service.getResults = function(cb) {
@@ -21,13 +23,13 @@ angular.module('nodeTestProgramApp')
     	})
     };
 
-    // service.getSomeResults = function(code, cb) {
-    //     return $http.get('/api/results/' + code)
-    //     .success function(temp) {
-    //         service.someResults = temp;
-    //         cb();
-    //     }
-    // }
+    service.getSomeResults = function(code, cb) {
+        return $http.get('/api/results/' + code)
+        .success (function(temp) {
+            service.someResults = temp;
+            cb();
+        })
+    };
 
     service.getShortlist = function(code, cb) {
         return $http.get('/api/invocations/' + code)
@@ -37,6 +39,8 @@ angular.module('nodeTestProgramApp')
             cb();
         })
     };
+
+
 
 
 

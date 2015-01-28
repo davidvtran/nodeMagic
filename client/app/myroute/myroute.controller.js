@@ -10,7 +10,7 @@ angular.module('nodeTestProgramApp')
     	$scope.keys = Object.keys($scope.results[0]);
     	remove($scope.keys, '_id');
     	remove($scope.keys, 'shortURL');
-    	console.log("keys:" + $scope.keys);
+    	// console.log("keys:" + $scope.keys);
     });
 
     function remove(arr, item) {
@@ -21,10 +21,10 @@ angular.module('nodeTestProgramApp')
       	}
   	}
     $scope.shortcode = function(string) {
-      console.log(string);
+      // console.log(string);
       // console.log(string.slice(32,35));
       $scope.temp = string.slice(32,35);
-      console.log($scope.temp);
+      // console.log($scope.temp);
       return $scope.temp;
     };
 
